@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv0juudbl2gpq"]
+
+[ext_resource type="PackedScene" uid="uid://cpxo11xvu4m8m" path="res://src/agent.tscn" id="1_kw5fx"]
+
+[node name="Battlefield" type="Node2D"]
+
+[node name="Agent2" parent="." instance=ExtResource("1_kw5fx")]
+position = Vector2(829, 238)
+
+[node name="Agent" parent="." instance=ExtResource("1_kw5fx")]
+position = Vector2(299, 227)
