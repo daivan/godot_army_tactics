@@ -1,11 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv0juudbl2gpq"]
+[gd_scene load_steps=3 format=3 uid="uid://cv0juudbl2gpq"]
 
 [ext_resource type="PackedScene" uid="uid://cpxo11xvu4m8m" path="res://src/agent.tscn" id="1_kw5fx"]
+[ext_resource type="PackedScene" uid="uid://bu00jm5dakw6a" path="res://src/enemy_agent.tscn" id="2_to6av"]
 
 [node name="Battlefield" type="Node2D"]
 
-[node name="Agent2" parent="." instance=ExtResource("1_kw5fx")]
-position = Vector2(829, 238)
-
 [node name="Agent" parent="." instance=ExtResource("1_kw5fx")]
 position = Vector2(299, 227)
+team = "hero"
+target = "enemy"
+
+[node name="EnemyAgent2" parent="." groups=["enemy"] instance=ExtResource("2_to6av")]
+position = Vector2(100, 563)
+
+[node name="EnemyAgent" parent="." groups=["enemy"] instance=ExtResource("2_to6av")]
+position = Vector2(684, 245)
+
+[node name="Agent2" parent="." instance=ExtResource("1_kw5fx")]
+position = Vector2(955, 501)
+team = "hero"
+target = "enemy"

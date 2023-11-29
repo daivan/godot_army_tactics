@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpxo11xvu4m8m"]
+[gd_scene load_steps=5 format=3 uid="uid://cpxo11xvu4m8m"]
 
+[ext_resource type="Script" path="res://src/agent.gd" id="1_10d5c"]
 [ext_resource type="Texture2D" uid="uid://d0u5sxhyhrnwv" path="res://icon.svg" id="1_yqyc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d41cb"]
 size = Vector2(47, 46)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ph4dp"]
+radius = 101.139
+
 [node name="Agent" type="CharacterBody2D"]
+script = ExtResource("1_10d5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(23.5, 24)
@@ -15,3 +20,14 @@ shape = SubResource("RectangleShape2D_d41cb")
 position = Vector2(24.5, 24.5)
 scale = Vector2(0.367188, 0.367188)
 texture = ExtResource("1_yqyc4")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2(21, 24)
+shape = SubResource("CircleShape2D_ph4dp")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
