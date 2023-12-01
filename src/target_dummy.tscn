@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkteq3wadfeo5"]
+
+[ext_resource type="Texture2D" uid="uid://m4t4suyql5ik" path="res://assets/enemies/tile_0108.png" id="1_aq3vg"]
+[ext_resource type="Script" path="res://src/target_dummy.gd" id="1_qche7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w5a14"]
+
+[node name="TargetDummy" type="CharacterBody2D"]
+script = ExtResource("1_qche7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aq3vg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w5a14")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.176471, 0.380392, 0, 1)
+offset_left = -13.0
+offset_top = 9.0
+offset_right = 277.0
+offset_bottom = 69.0
+scale = Vector2(0.1, 0.1)
+value = 100.0

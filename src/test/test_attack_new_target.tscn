@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4bbntxnk0jw"]
+
+[ext_resource type="PackedScene" uid="uid://d07vtcft4xqnm" path="res://src/tile_map.tscn" id="1_2xp6t"]
+[ext_resource type="PackedScene" uid="uid://cpxo11xvu4m8m" path="res://src/agent.tscn" id="2_jtxeh"]
+[ext_resource type="PackedScene" uid="uid://dkteq3wadfeo5" path="res://src/target_dummy.tscn" id="3_7jrjf"]
+
+[node name="TestAttackNewTarget" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_2xp6t")]
+
+[node name="Agent" parent="." instance=ExtResource("2_jtxeh")]
+position = Vector2(46, 86)
+
+[node name="TargetDummy2" parent="." groups=["enemy"] instance=ExtResource("3_7jrjf")]
+position = Vector2(217, 113)
+
+[node name="TargetDummy" parent="." groups=["enemy"] instance=ExtResource("3_7jrjf")]
+position = Vector2(210, 55)
+
+[node name="TargetDummy3" parent="." groups=["enemy"] instance=ExtResource("3_7jrjf")]
+position = Vector2(329, 66)
+
+[node name="TargetDummy2" parent="TargetDummy3" groups=["enemy"] instance=ExtResource("3_7jrjf")]
+position = Vector2(6, 25)

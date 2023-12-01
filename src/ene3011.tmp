@@ -32,6 +32,7 @@ value = 100.0
 show_percentage = false
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
 [node name="UpdatePathTimer" type="Timer" parent="."]
 autostart = true
