@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var AttackLogic = load("res://src/logic/attack_logic.gd").new()
+
 const SPEED = 20.0
 @export var currentHealth:int = 100
 
@@ -7,9 +9,18 @@ const SPEED = 20.0
 
 @onready var navigationAgent := $NavigationAgent2D as NavigationAgent2D
 
+var attackTarget:CharacterBody2D
+var isInAttackRange:bool = false
+
+var heroesInRange : Array = []
+
 var isDead:bool = false
 
 func _physics_process(delta):
+	
+	if attackTarget == null:
+		find_new_attack_target()
+		
 	if getIsDead() == true:
 		die()
 		return
@@ -20,6 +31,12 @@ func _physics_process(delta):
 	var dir = to_local(navigationAgent.get_next_path_position()).normalized()
 	velocity = dir * SPEED
 	move_and_slide()
+	
+	if attackTarget == null or attackTarget.getIsDead() == true or attackTarget.visible == false:	
+		self.heroesInRange.erase(attackTarget)
+		print("in range:", self.heroesInRange)
+		$AttackTimer.stop()
+		find_new_attack_target()
 	
 func getIsDead():
 	return self.isDead
@@ -41,5 +58,35 @@ func _on_update_path_timer_timeout():
 
 func die():
 	self.visible = false
+	$AttackTimer.stop()
 	$UpdatePathTimer.stop()
 	pass
+
+func find_new_attack_target():
+	var all_heroes = get_tree().get_nodes_in_group("hero")
+	for hero in all_heroes:
+		if hero.getIsDead() == false:
+			self.attackTarget = hero
+			if self.attackTarget in self.heroesInRange:
+				$AttackTimer.start()
+
+
+func _on_attack_range_body_entered(body):
+	if body.is_in_group("hero"):
+		self.heroesInRange.append(body)
+		
+	if body.is_in_group("hero") && body == attackTarget:
+		self.isInAttackRange = true
+		$AttackTimer.start()
+	print("in range:", self.heroesInRange)
+
+
+func _on_attack_range_body_exited(body):
+	if body.is_in_group("hero"):
+		self.heroesInRange.erase(body)
+	print("in range:", self.heroesInRange)
+
+
+func _on_attack_timer_timeout():
+	if attackTarget != null:
+		AttackLogic.attack(self, attackTarget)

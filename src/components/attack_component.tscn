@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://boqwt1npb004v"]
+
+[ext_resource type="Script" path="res://src/components/AttackComponent.gd" id="1_rweau"]
+
+[node name="AttackComponent" type="Node2D"]
+script = ExtResource("1_rweau")
+
+[node name="AttackTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

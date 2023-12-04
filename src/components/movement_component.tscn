@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqymrweaohfw0"]
+
+[ext_resource type="Script" path="res://src/components/movement_component.gd" id="1_m1ns1"]
+
+[node name="MovementComponent" type="NavigationAgent2D"]
+script = ExtResource("1_m1ns1")
+
+[node name="UpdateMovePath" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="UpdateMovePath" to="." method="_on_update_move_path_timeout"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ulkfbmmjakso"]
+
+[ext_resource type="Script" path="res://src/components/attack_range_component.gd" id="1_spncq"]
+
+[node name="AttackRangeComponent" type="Area2D"]
+script = ExtResource("1_spncq")

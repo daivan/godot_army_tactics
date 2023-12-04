@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://uecc53vrel5u"]
+
+[ext_resource type="PackedScene" uid="uid://bmog2avuugi54" path="res://src/components/health_component.tscn" id="1_xngj1"]
+[ext_resource type="PackedScene" uid="uid://ce75dqmwnnxpp" path="res://src/components/hitbox_component.tscn" id="2_g48uy"]
+[ext_resource type="Texture2D" uid="uid://dxheyl33pc4bq" path="res://assets/characters/tile_0086.png" id="4_4wx2q"]
+[ext_resource type="PackedScene" uid="uid://boqwt1npb004v" path="res://src/components/attack_component.tscn" id="4_06dnw"]
+[ext_resource type="PackedScene" uid="uid://bqymrweaohfw0" path="res://src/components/movement_component.tscn" id="5_6eu8f"]
+[ext_resource type="PackedScene" uid="uid://d0irtd748m7vf" path="res://src/components/target_component.tscn" id="6_plos4"]
+[ext_resource type="PackedScene" uid="uid://ulkfbmmjakso" path="res://src/components/attack_range_component.tscn" id="6_s1c6i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7g23"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvsuu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0odd"]
+radius = 58.0775
+
+[node name="Archer" type="CharacterBody2D"]
+
+[node name="MovementComponent" parent="." node_paths=PackedStringArray("moveTarget") instance=ExtResource("5_6eu8f")]
+moveTarget = NodePath("../TargetComponent")
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_xngj1")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_g48uy")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_p7g23")
+
+[node name="AttackComponent" parent="." node_paths=PackedStringArray("attackRangeComponent", "targetComponent") instance=ExtResource("4_06dnw")]
+attackRangeComponent = NodePath("../AttackRangeComponent")
+targetComponent = NodePath("../TargetComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_4wx2q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jvsuu")
+
+[node name="AttackRangeComponent" parent="." instance=ExtResource("6_s1c6i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRangeComponent"]
+shape = SubResource("CircleShape2D_l0odd")
+
+[node name="TargetComponent" parent="." instance=ExtResource("6_plos4")]

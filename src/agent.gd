@@ -9,6 +9,7 @@ extends CharacterBody2D
 var attackTarget:CharacterBody2D
 var isInAttackRange:bool = false
 
+var AttackLogic = load("res://src/logic/attack_logic.gd").new()
 var enemiesInRange : Array = []
 
 var isDead = false
@@ -22,11 +23,14 @@ func _ready():
 	if attackTarget == null:
 		find_new_attack_target()
 	
-var AttackLogic = load("res://src/logic/attack_logic.gd").new()
 
 func _physics_process(delta):
 	# Add the gravity.
 
+	if getIsDead() == true:
+		die()
+		return
+		
 	if attackTarget != null and isInAttackRange == false:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = dir * SPEED
@@ -38,7 +42,8 @@ func _physics_process(delta):
 		$AttackTimer.stop()
 		find_new_attack_target()
 		
-		
+	update_healthbar()
+	
 func makepath() -> void:
 	if attackTarget != null:
 		nav_agent.target_position = self.attackTarget.global_position
@@ -82,3 +87,12 @@ func find_new_attack_target():
 func _on_update_path_timer_timeout():
 	makepath()
 
+func update_healthbar():
+	var healthBar = $HealthBar
+	healthBar.value = self.currentHealth
+
+func die():
+	self.visible = false
+	$AttackTimer.stop()
+	$UpdatePathTimer.stop()
+	pass

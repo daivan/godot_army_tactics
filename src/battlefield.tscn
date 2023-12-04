@@ -8,7 +8,7 @@
 
 [node name="TileMap" parent="." instance=ExtResource("1_2caug")]
 
-[node name="Agent" parent="." instance=ExtResource("1_kw5fx")]
+[node name="Agent" parent="." groups=["hero"] instance=ExtResource("1_kw5fx")]
 position = Vector2(32, 50)
 team = "hero"
 target = "enemy"
@@ -25,12 +25,12 @@ player = NodePath("../Agent2")
 position = Vector2(353, 92)
 player = NodePath("../Agent3")
 
-[node name="Agent3" parent="." instance=ExtResource("1_kw5fx")]
+[node name="Agent3" parent="." groups=["hero"] instance=ExtResource("1_kw5fx")]
 position = Vector2(32, 119)
 team = "hero"
 target = "enemy"
 
-[node name="Agent2" parent="." instance=ExtResource("1_kw5fx")]
+[node name="Agent2" parent="." groups=["hero"] instance=ExtResource("1_kw5fx")]
 position = Vector2(29, 83)
 team = "hero"
 target = "enemy"

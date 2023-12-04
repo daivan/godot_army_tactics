@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu00jm5dakw6a"]
+[gd_scene load_steps=5 format=3 uid="uid://bu00jm5dakw6a"]
 
 [ext_resource type="Script" path="res://src/enemy_agent.gd" id="1_sdb10"]
 [ext_resource type="Texture2D" uid="uid://7dc7okhjvbro" path="res://assets/enemies/tile_0109.png" id="2_sfiwt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_swchb"]
 radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_330jb"]
+radius = 22.0
 
 [node name="EnemyAgent" type="CharacterBody2D"]
 collision_layer = 3
@@ -36,4 +39,15 @@ show_percentage = false
 [node name="UpdatePathTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2(6, 8)
+shape = SubResource("CircleShape2D_330jb")
+
 [connection signal="timeout" from="UpdatePathTimer" to="." method="_on_update_path_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
