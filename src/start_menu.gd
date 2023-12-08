@@ -1,9 +1,13 @@
 extends Node2D
 
-var next_scene : PackedScene  = preload("res://src/between_battles.tscn")
+var next_scene : PackedScene  = preload("res://src/interface/world_map.tscn")
+
+#var user_preferences: UserPreferences
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#print('whats up from autoloads: '+str(GameManager.wave))
+	#print(GameManager.getPlayer())
 	pass # Replace with function body.
 
 

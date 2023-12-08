@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6cln0kroi06a"]
+
+[ext_resource type="Script" path="res://src/interface/unit_interface.gd" id="1_0700p"]
+[ext_resource type="Texture2D" uid="uid://5v1i40dw0vt" path="res://assets/characters/tile_0084.png" id="2_lstpr"]
+
+[node name="UnitInterface" type="Node2D"]
+script = ExtResource("1_0700p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lstpr")
+
+[node name="LabelName" type="Label" parent="."]
+offset_left = -11.0
+offset_top = 11.0
+offset_right = 29.0
+offset_bottom = 34.0

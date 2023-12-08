@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjhikvlgf67gr"]
+
+[ext_resource type="Script" path="res://src/interface/world_map.gd" id="1_cjjqs"]
+
+[node name="WorldMap" type="Node2D"]
+script = ExtResource("1_cjjqs")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 21.0
+offset_right = 229.0
+offset_bottom = 55.0
+text = "Select Mission"
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonStartMission" type="Button" parent="."]
+offset_left = 189.0
+offset_top = 147.0
+offset_right = 320.0
+offset_bottom = 189.0
+text = "Start Mission"
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonWorldMap" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 146.0
+offset_right = 164.0
+offset_bottom = 188.0
+text = "Configre Army"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ButtonStartMission" to="." method="_on_button_start_mission_pressed"]
+[connection signal="pressed" from="ButtonWorldMap" to="." method="_on_button_world_map_pressed"]

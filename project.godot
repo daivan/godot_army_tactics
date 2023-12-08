@@ -15,6 +15,11 @@ run/main_scene="res://src/start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://src/autoloads/game_manager.gd"
+SaveLoadManager="*res://src/autoloads/save_load_manager.gd"
+
 [display]
 
 window/stretch/scale=3.0

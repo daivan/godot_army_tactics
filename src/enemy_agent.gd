@@ -5,8 +5,6 @@ var AttackLogic = load("res://src/logic/attack_logic.gd").new()
 const SPEED = 20.0
 @export var currentHealth:int = 100
 
-@export var player: Node2D
-
 @onready var navigationAgent := $NavigationAgent2D as NavigationAgent2D
 
 var attackTarget:CharacterBody2D
@@ -51,7 +49,7 @@ func update_healthbar():
 	healthBar.value = self.currentHealth
 
 func update_navigation_path():
-	self.navigationAgent.target_position = self.player.global_position
+	self.navigationAgent.target_position = self.attackTarget.global_position
 
 func _on_update_path_timer_timeout():
 	update_navigation_path()
@@ -64,11 +62,14 @@ func die():
 
 func find_new_attack_target():
 	var all_heroes = get_tree().get_nodes_in_group("hero")
+	print(all_heroes)
 	for hero in all_heroes:
 		if hero.getIsDead() == false:
 			self.attackTarget = hero
+			$UpdatePathTimer.start()
 			if self.attackTarget in self.heroesInRange:
 				$AttackTimer.start()
+				
 
 
 func _on_attack_range_body_entered(body):

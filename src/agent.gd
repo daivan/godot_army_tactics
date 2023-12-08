@@ -19,6 +19,10 @@ const JUMP_VELOCITY = -400.0
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
+func setup(unit_data):
+	#self.add_to_group('hero')
+	pass
+	
 func _ready():
 	if attackTarget == null:
 		find_new_attack_target()

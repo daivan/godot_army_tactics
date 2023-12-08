@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://2pc7vsoo46xv"]
+
+[ext_resource type="Script" path="res://src/interface/configure_army.gd" id="1_dfc8u"]
+
+[node name="ConfigureArmy" type="Node2D"]
+script = ExtResource("1_dfc8u")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 21.0
+offset_right = 229.0
+offset_bottom = 55.0
+text = "Configure army"
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonWorldMap" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 146.0
+offset_right = 164.0
+offset_bottom = 188.0
+text = "World map"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ButtonWorldMap" to="." method="_on_button_world_map_pressed"]

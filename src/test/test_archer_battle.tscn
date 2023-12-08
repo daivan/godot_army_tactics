@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfii60w3v0mha"]
 
 [ext_resource type="PackedScene" uid="uid://d07vtcft4xqnm" path="res://src/tile_map.tscn" id="1_xyql5"]
-[ext_resource type="PackedScene" uid="uid://uecc53vrel5u" path="res://src/archer.tscn" id="2_s4yfe"]
 [ext_resource type="PackedScene" uid="uid://dkteq3wadfeo5" path="res://src/target_dummy.tscn" id="3_h6lhu"]
+[ext_resource type="PackedScene" uid="uid://bwrdbtmro0baw" path="res://src/axeman.tscn" id="4_npyuo"]
 
 [node name="TestArcherBattle" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_xyql5")]
 
-[node name="Archer" parent="." instance=ExtResource("2_s4yfe")]
-position = Vector2(49, 101)
-
 [node name="TargetDummy" parent="." groups=["enemy"] instance=ExtResource("3_h6lhu")]
 position = Vector2(287, 85)
+
+[node name="Archer2" parent="." instance=ExtResource("4_npyuo")]
+position = Vector2(110, 95)

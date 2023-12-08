@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxk8siawvivnd"]
+
+[ext_resource type="Script" path="res://src/interface/world_map_node.gd" id="1_3mp7t"]
+[ext_resource type="Texture2D" uid="uid://d0u5sxhyhrnwv" path="res://icon.svg" id="1_e23q6"]
+
+[node name="WorldMapNode" type="Node2D"]
+script = ExtResource("1_3mp7t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e23q6")

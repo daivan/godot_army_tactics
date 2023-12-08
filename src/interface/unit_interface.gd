@@ -1,7 +1,10 @@
 extends Node2D
 
-var next_scene : PackedScene  = preload("res://src/battlefield.tscn")
-
+func setup(unit_data: UnitData):
+	print(unit_data)
+	$LabelName.text = 'bajbaj'
+	pass
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -10,7 +13,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_button_pressed():
-	get_tree().change_scene_to_packed(next_scene)
