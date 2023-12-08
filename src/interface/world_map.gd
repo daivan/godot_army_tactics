@@ -1,30 +1,42 @@
 extends Node2D
 
-var battlefield_scene : PackedScene  = preload("res://src/battlefield.tscn")
-var configure_army_scene : PackedScene  = preload("res://src/interface/configure_army.tscn")
+var configure_army_scene = preload("res://src/interface/configure_army.tscn")
 
-var WorldMapNodeClass = preload("res://src/interface/world_map_node.tscn")
+var battlefield_scene = preload("res://src/battlefield.tscn")
+
+var world_map_node = preload("res://src/interface/world_map_node.tscn")
 
 var world_map_data: WorldMapData
 
+@onready var button_start_mission = $ButtonStartMission
+
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	world_map_data = WorldMapData.load_or_create()
+	
+	self.button_start_mission.disabled = true
+	
+	self.world_map_data = WorldMapData.load_or_create()
 	
 	if world_map_data.world_map_node_array.size() > 0:
 		draw_army(world_map_data.world_map_node_array)
 		
-func draw_army(unit_array) -> void:
-	var count = 1
-	for unit in unit_array:
 		
-		var world_map_node = WorldMapNodeClass.instantiate()
-		world_map_node.setup(unit)
-		world_map_node.position.x = count * 50
-		world_map_node.position.y = 50
-		add_child(world_map_node)
+func _process(delta):
+	if GameManager.get_world_map_node() != null:
+		self.button_start_mission.disabled = false
+		
+func draw_army(world_map_node_array) -> void:
+	var count = 1
+	for world_map_node_resource in world_map_node_array:
+		
+		var WorldMapNode = world_map_node.instantiate()
+		WorldMapNode.setup(world_map_node_resource)
+		WorldMapNode.position.x = count * 70
+		WorldMapNode.position.y = 55
+		add_child(WorldMapNode)
 		count += 1
 		pass
-
 
 func _on_button_configure_army_pressed():
 	get_tree().change_scene_to_packed(configure_army_scene)

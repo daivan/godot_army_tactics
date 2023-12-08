@@ -1,6 +1,6 @@
 extends Node2D
 
-var world_map_scene : PackedScene  = preload("res://src/interface/world_map.tscn")
+var world_map_scene = preload("res://src/interface/world_map.tscn")
 
 var unit_interface = preload("res://src/interface/unit_interface.tscn")
 

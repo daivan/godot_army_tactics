@@ -4,5 +4,13 @@ var wave: int = 1
 var enemies_remaining: int = 1
 var spawn_count: int = 0
 
+var selected_world_map_node:WorldMapNodeData
 func getPlayer() -> Array:
 	return [10, 20, 30]
+
+
+func set_world_map_node(world_map_node):
+	self.selected_world_map_node = world_map_node
+	
+func get_world_map_node():
+	return self.selected_world_map_node

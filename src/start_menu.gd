@@ -1,6 +1,6 @@
 extends Node2D
 
-var next_scene : PackedScene  = preload("res://src/interface/world_map.tscn")
+var next_scene = preload("res://src/interface/world_map.tscn")
 
 #var user_preferences: UserPreferences
 

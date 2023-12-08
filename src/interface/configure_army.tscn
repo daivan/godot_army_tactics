@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://2pc7vsoo46xv"]
+[gd_scene load_steps=2 format=3 uid="uid://c0ushp8j4ic3r"]
 
 [ext_resource type="Script" path="res://src/interface/configure_army.gd" id="1_dfc8u"]
 
