@@ -14,3 +14,7 @@ func set_world_map_node(world_map_node):
 	
 func get_world_map_node():
 	return self.selected_world_map_node
+
+func start_new_game():
+	print('starting new game...')
+	

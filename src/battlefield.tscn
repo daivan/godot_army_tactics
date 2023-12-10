@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv0juudbl2gpq"]
+[gd_scene load_steps=6 format=3 uid="uid://cv0juudbl2gpq"]
 
 [ext_resource type="PackedScene" uid="uid://d07vtcft4xqnm" path="res://src/tile_map.tscn" id="1_2caug"]
 [ext_resource type="Script" path="res://src/battlefield.gd" id="1_36mgm"]
 [ext_resource type="PackedScene" uid="uid://bu00jm5dakw6a" path="res://src/enemy_agent.tscn" id="2_to6av"]
+[ext_resource type="PackedScene" uid="uid://6c7i1eh53neo" path="res://src/interface/win_battle_scene.tscn" id="4_wgwvu"]
+[ext_resource type="PackedScene" uid="uid://cdg6x0jqlwhcu" path="res://src/interface/lose_battle_scene.tscn" id="5_p18cg"]
 
 [node name="Battlefield" type="Node2D"]
 script = ExtResource("1_36mgm")
@@ -17,3 +19,10 @@ position = Vector2(359, 151)
 
 [node name="EnemyAgent" parent="." groups=["enemy"] instance=ExtResource("2_to6av")]
 position = Vector2(353, 92)
+
+[node name="WinBattleScene" parent="." instance=ExtResource("4_wgwvu")]
+position = Vector2(51, 6)
+
+[node name="LoseBattleScene" parent="." instance=ExtResource("5_p18cg")]
+visible = false
+position = Vector2(127, 59)

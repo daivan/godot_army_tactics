@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0ushp8j4ic3r"]
 
-[ext_resource type="Script" path="res://src/interface/configure_army.gd" id="1_dfc8u"]
+[ext_resource type="Script" path="res://src/interface/configure_army.gd" id="1_b1f3o"]
 
 [node name="ConfigureArmy" type="Node2D"]
-script = ExtResource("1_dfc8u")
+script = ExtResource("1_b1f3o")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 36.0

@@ -1,7 +1,5 @@
 extends Node2D
 
-var next_scene = preload("res://src/interface/world_map.tscn")
-
 #var user_preferences: UserPreferences
 
 # Called when the node enters the scene tree for the first time.
@@ -17,4 +15,4 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_packed(next_scene)
+	get_tree().change_scene_to_file("res://src/interface/game_over_scene.tscn")

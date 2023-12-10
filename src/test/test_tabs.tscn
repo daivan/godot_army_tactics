@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://xuiabla4v06r"]
+
+[ext_resource type="PackedScene" uid="uid://5aqgxy8pi1i3" path="res://src/interface/world_map.tscn" id="1_i6wge"]
+[ext_resource type="PackedScene" uid="uid://c0ushp8j4ic3r" path="res://src/interface/configure_army.tscn" id="1_lg3jx"]
+
+[node name="TestTabs" type="Node2D"]
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_right = 664.0
+offset_bottom = 277.0
+
+[node name="TabBar" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/TabBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "First tab
+"
+
+[node name="WorldMap" parent="TabContainer/TabBar" instance=ExtResource("1_i6wge")]
+
+[node name="TabBar2" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/TabBar2"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 48.0
+offset_right = 130.0
+offset_bottom = 71.0
+text = "Second tab"
+
+[node name="ConfigureArmy" parent="TabContainer/TabBar2" instance=ExtResource("1_lg3jx")]

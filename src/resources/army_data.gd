@@ -20,4 +20,8 @@ static func load_new_army() -> ArmyData:
 	army_data.unit_array.append(unit_data1)
 	var unit_data2 = UnitData.new()
 	army_data.unit_array.append(unit_data2)
+	var unit_data3 = UnitData.new()
+	army_data.unit_array.append(unit_data3)
+	var unit_data4 = UnitData.new()
+	army_data.unit_array.append(unit_data4)
 	return army_data

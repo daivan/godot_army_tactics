@@ -16,7 +16,7 @@ func _ready():
 	
 	self.button_start_mission.disabled = true
 	
-	self.world_map_data = WorldMapData.load_or_create()
+	self.world_map_data = WorldMapData.get_world_map_data()
 	
 	if world_map_data.world_map_node_array.size() > 0:
 		draw_army(world_map_data.world_map_node_array)

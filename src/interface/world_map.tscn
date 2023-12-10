@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://5aqgxy8pi1i3"]
 
-[ext_resource type="Script" path="res://src/interface/world_map.gd" id="1_rfh5l"]
+[ext_resource type="Script" path="res://src/interface/world_map.gd" id="1_3g010"]
 
 [node name="WorldMap" type="Node2D"]
-script = ExtResource("1_rfh5l")
+script = ExtResource("1_3g010")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

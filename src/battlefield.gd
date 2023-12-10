@@ -14,8 +14,33 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var nodes_in_group := get_tree().get_nodes_in_group('hero')
 
+	var game_over = true
+	# Loop through nodes in the group
+	for node in nodes_in_group:
+		# Do something with the node
+		if node.isDead == false:
+			game_over = false
+	
+	if game_over == true:
+		var lost_battle_scene = $LoseBattleScene
+		lost_battle_scene.visible = true
+
+
+
+	var enemy_nodes_in_group := get_tree().get_nodes_in_group('enemy')
+
+	var game_win = true
+	# Loop through nodes in the group
+	for enemy_node in enemy_nodes_in_group:
+		# Do something with the node
+		if enemy_node.isDead == false:
+			game_win = false
+	
+	if game_win == true:
+		var win_battle_scene = $WinBattleScene
+		win_battle_scene.visible = true
 
 func spawn_army(unit_array) -> void:
 	var count = 1
