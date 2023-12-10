@@ -17,7 +17,7 @@ offset_left = 7.0
 offset_top = 168.0
 offset_right = 191.0
 offset_bottom = 199.0
-text = "Version: 0.6.0"
+text = "Version: 0.6.1"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 104.0

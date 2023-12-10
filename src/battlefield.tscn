@@ -21,6 +21,7 @@ position = Vector2(359, 151)
 position = Vector2(353, 92)
 
 [node name="WinBattleScene" parent="." instance=ExtResource("4_wgwvu")]
+visible = false
 position = Vector2(51, 6)
 
 [node name="LoseBattleScene" parent="." instance=ExtResource("5_p18cg")]

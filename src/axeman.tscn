@@ -247,7 +247,8 @@ texture = ExtResource("5_lgqfr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jvsuu")
 
-[node name="AttackRangeComponent" parent="." instance=ExtResource("6_ngy4t")]
+[node name="AttackRangeComponent" parent="." node_paths=PackedStringArray("targetComponent") instance=ExtResource("6_ngy4t")]
+targetComponent = NodePath("../TargetComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRangeComponent"]
 shape = SubResource("CircleShape2D_l0odd")

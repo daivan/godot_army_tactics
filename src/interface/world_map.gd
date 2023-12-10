@@ -1,22 +1,24 @@
 extends Node2D
 
-var configure_army_scene = preload("res://src/interface/configure_army.tscn")
-
-var battlefield_scene = preload("res://src/battlefield.tscn")
-
-var world_map_node = preload("res://src/interface/world_map_node.tscn")
 
 var world_map_data: WorldMapData
 
 @onready var button_start_mission = $ButtonStartMission
 
-
+func _init():
+	# This code will run every time the node enters the scene tree
+	print("INIT Node entered tree")
+	
+func _enter_tree():
+	# This code will run every time the node enters the scene tree
+	print("Node entered tree")
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	print('Run again!!!')
 	self.button_start_mission.disabled = true
 	
-	self.world_map_data = WorldMapData.get_world_map_data()
+	self.world_map_data = GameManager.get_world_map()
 	
 	if world_map_data.world_map_node_array.size() > 0:
 		draw_army(world_map_data.world_map_node_array)
@@ -27,6 +29,7 @@ func _process(delta):
 		self.button_start_mission.disabled = false
 		
 func draw_army(world_map_node_array) -> void:
+	var world_map_node = preload("res://src/interface/world_map_node.tscn")
 	var count = 1
 	for world_map_node_resource in world_map_node_array:
 		
@@ -39,8 +42,7 @@ func draw_army(world_map_node_array) -> void:
 		pass
 
 func _on_button_configure_army_pressed():
-	get_tree().change_scene_to_packed(configure_army_scene)
-
+	get_tree().change_scene_to_file("res://src/interface/configure_army.tscn")
 
 func _on_button_start_mission_pressed():
-	get_tree().change_scene_to_packed(battlefield_scene)
+	get_tree().change_scene_to_file("res://src/battlefield.tscn")

@@ -18,8 +18,9 @@ func _process(delta):
 
 func _on_attack_timer_timeout():
 	if self.targetComponent != null:
-		print('Axeman is attacking')
-		animation_player.play('attack')
-		#if attackRangeComponent.get_nodes_in_range().has(self.targetComponent.get_target()):
-		self.targetComponent.get_target().currentHealth -= 10
+		
+		if attackRangeComponent.isInAttackRange == true:
+			print('Axeman is attacking')
+			animation_player.play('attack')
+			self.targetComponent.get_target().currentHealth -= 10
 		
