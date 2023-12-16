@@ -15,6 +15,9 @@ func _ready():
 		
 
 func draw_army(unit_array) -> void:
+	var label_gold_value = $LabelGoldValue
+	label_gold_value.text = str(GameManager.gold)
+	
 	var count = 1
 	for unit in unit_array:
 		

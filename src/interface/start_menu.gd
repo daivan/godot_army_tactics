@@ -1,22 +1,12 @@
 extends Node2D
 
-#var next_scene = preload("res://src/interface/world_map.tscn")
+@onready var button_settings = $ButtonSettings
 
-#var user_preferences: UserPreferences
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	#print('whats up from autoloads: '+str(GameManager.wave))
-	#print(GameManager.getPlayer())
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	if GameManager.is_game_in_progress() == true:
+		var button_continue = $ButtonContinue
+		button_continue.disabled = false
 
 func _on_button_pressed():
 	GameManager.start_new_game()
-	#get_tree().change_scene_to_packed(next_scene)
 	get_tree().change_scene_to_file("res://src/interface/world_map.tscn")

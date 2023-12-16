@@ -15,4 +15,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
+	GameManager.win_battlefield()
 	get_tree().change_scene_to_file("res://src/interface/world_map.tscn")

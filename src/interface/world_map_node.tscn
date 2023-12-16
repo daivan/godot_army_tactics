@@ -12,16 +12,24 @@ scale = Vector2(0.265625, 0.265625)
 texture = ExtResource("1_e23q6")
 
 [node name="ButtonSelect" type="Button" parent="."]
-offset_left = -34.0
-offset_top = 21.0
-offset_right = 32.0
-offset_bottom = 52.0
+offset_left = -31.0
+offset_top = 4.0
+offset_right = 34.0
+offset_bottom = 35.0
 text = "Select"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -21.0
-offset_top = -42.0
-offset_right = 19.0
-offset_bottom = -19.0
+offset_left = -20.0
+offset_top = -34.0
+offset_right = 23.0
+offset_bottom = -11.0
+
+[node name="LabelVictory" type="Label" parent="."]
+visible = false
+offset_left = -26.0
+offset_top = 4.0
+offset_right = 29.0
+offset_bottom = 27.0
+text = "Victory"
 
 [connection signal="pressed" from="ButtonSelect" to="." method="_on_button_select_pressed"]

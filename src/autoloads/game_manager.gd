@@ -8,21 +8,65 @@ var world_map_data: WorldMapData
 
 var selected_world_map_node:WorldMapNodeData
 
+var current_level = 1
+var gold: int = 0
 
+var beaten_level_names_array: Array = []
 
 func getPlayer() -> Array:
 	return [10, 20, 30]
 
 
-func set_world_map_node(world_map_node):
+func set_world_map_node(world_map_node) -> void:
 	self.selected_world_map_node = world_map_node
 	
-func get_world_map_node():
+func get_world_map_node() -> WorldMapNodeData:
 	return self.selected_world_map_node
 
-func start_new_game():
+func get_current_level() -> int:
+	return self.current_level
+
+
+# --- Function start_new_game
+#
+# Restart the game and reset everything
+#
+# Returns:
+# - void
+func start_new_game() -> void:
 	self.world_map_data = WorldMapData.get_world_map_data()
-	print('starting new game...')
+	self.current_level = 1
+	self.gold = 0
+	self.beaten_level_names_array = []
+
+# --- Function win_battlefield
+#
+# This gets triggered after you've won a battle and have clicked on continue
+# We add the beaten level in the array and save the game
+#
+# Returns:
+# - void
+func win_battlefield() -> void:
+	self.current_level += 1
+	add_to_beaten_level_names(self.selected_world_map_node.level_name)
+	self.add_gold(10) # Should come from self.selected_world_map_node
+	SaveLoadManager.save_world_map_data(self.world_map_data)
+	
+func add_gold(earned_gold: int):
+	self.gold += earned_gold
+	
+
+func add_to_beaten_level_names(level_name) -> void:
+	self.beaten_level_names_array.append(level_name)
 	
 func get_world_map() -> WorldMapData:
 	return self.world_map_data
+
+func get_beaten_level_names_array() -> Array:
+	return self.beaten_level_names_array
+	
+
+func is_game_in_progress() -> bool:
+	if SaveLoadManager.does_save_file_exist() == true:
+		return true
+	return false
