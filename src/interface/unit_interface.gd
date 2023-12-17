@@ -1,9 +1,13 @@
 extends Node2D
 
 func setup(unit_data: UnitData):
-	print(unit_data)
-	$LabelName.text = 'bajbaj'
-	pass
+	$LabelName.text = unit_data.name
+	
+
+	if unit_data.item_slot_1 != '':
+		var new_texture = load("res://assets/items/longsword.png")
+		$SpriteItemSlot1.texture = new_texture
+
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():

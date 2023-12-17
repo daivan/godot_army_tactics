@@ -48,4 +48,4 @@ func _on_button_configure_army_pressed():
 	get_tree().change_scene_to_file("res://src/interface/configure_army.tscn")
 
 func _on_button_start_mission_pressed():
-	get_tree().change_scene_to_file("res://src/battlefield.tscn")
+	get_tree().change_scene_to_file("res://src/dynamic_battlefield.tscn")

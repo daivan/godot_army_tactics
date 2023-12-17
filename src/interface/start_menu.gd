@@ -8,5 +8,4 @@ func _ready():
 		button_continue.disabled = false
 
 func _on_button_pressed():
-	GameManager.start_new_game()
-	get_tree().change_scene_to_file("res://src/interface/world_map.tscn")
+	get_tree().change_scene_to_file("res://src/interface/create_army.tscn")

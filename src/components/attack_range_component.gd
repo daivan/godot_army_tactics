@@ -8,7 +8,6 @@ var bodiesInRange : Array = []
 func _process(delta):
 	if targetComponent.target in bodiesInRange:
 		self.isInAttackRange = true
-		print('is it there now?')
 	else:
 		self.isInAttackRange = false
 		

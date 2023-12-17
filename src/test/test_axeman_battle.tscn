@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://byr7c52kvacs5"]
 
 [ext_resource type="PackedScene" uid="uid://d07vtcft4xqnm" path="res://src/tile_map.tscn" id="1_ayb4y"]
-[ext_resource type="PackedScene" uid="uid://dkteq3wadfeo5" path="res://src/target_dummy.tscn" id="2_o364g"]
+[ext_resource type="Script" path="res://src/test/test_axeman_battle.gd" id="1_eygvh"]
 [ext_resource type="PackedScene" uid="uid://bwrdbtmro0baw" path="res://src/axeman.tscn" id="3_fyeot"]
 
-[node name="TestArcherBattle" type="Node2D"]
+[node name="TestAxemanBattle" type="Node2D"]
+script = ExtResource("1_eygvh")
 
 [node name="TileMap" parent="." instance=ExtResource("1_ayb4y")]
 
-[node name="TargetDummy" parent="." groups=["enemy"] instance=ExtResource("2_o364g")]
-position = Vector2(287, 85)
+[node name="EnemyAxeman" parent="." node_paths=PackedStringArray("target_component") instance=ExtResource("3_fyeot")]
+position = Vector2(605, 240)
+target_component = NodePath("../Axeman/TargetComponent")
 
 [node name="Axeman" parent="." instance=ExtResource("3_fyeot")]
-position = Vector2(63, 93)
+position = Vector2(231, 238)

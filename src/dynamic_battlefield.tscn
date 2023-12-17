@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://683xtus68usm"]
+
+[ext_resource type="Script" path="res://src/dynamic_battlefield.gd" id="1_bbq8a"]
+[ext_resource type="PackedScene" uid="uid://6c7i1eh53neo" path="res://src/interface/win_battle_scene.tscn" id="5_pajbo"]
+[ext_resource type="PackedScene" uid="uid://cdg6x0jqlwhcu" path="res://src/interface/lose_battle_scene.tscn" id="6_mmfli"]
+
+[node name="DynamicBattlefield" type="Node2D"]
+script = ExtResource("1_bbq8a")
+
+[node name="WinBattleScene" parent="." instance=ExtResource("5_pajbo")]
+visible = false
+position = Vector2(51, 6)
+
+[node name="LoseBattleScene" parent="." instance=ExtResource("6_mmfli")]
+visible = false
+position = Vector2(127, 59)

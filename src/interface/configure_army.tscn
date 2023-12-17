@@ -14,10 +14,10 @@ text = "Configure army"
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonWorldMap" type="Button" parent="."]
-offset_left = 33.0
-offset_top = 146.0
-offset_right = 164.0
-offset_bottom = 188.0
+offset_left = 44.0
+offset_top = 328.0
+offset_right = 175.0
+offset_bottom = 370.0
 text = "World map"
 metadata/_edit_use_anchors_ = true
 

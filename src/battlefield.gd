@@ -3,7 +3,7 @@ extends Node2D
 
 var army_data: ArmyData
 
-var unit_agent = preload("res://src/agent.tscn")
+var unit_agent = preload("res://src/axeman.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +20,7 @@ func _process(delta):
 	# Loop through nodes in the group
 	for node in nodes_in_group:
 		# Do something with the node
-		if node.isDead == false:
+		if node.is_dead == false:
 			game_over = false
 	
 	if game_over == true:

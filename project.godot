@@ -22,7 +22,9 @@ SaveLoadManager="*res://src/autoloads/save_load_manager.gd"
 
 [display]
 
-window/stretch/scale=2.0
+window/size/viewport_width=768
+window/size/viewport_height=432
+window/stretch/mode="viewport"
 
 [rendering]
 

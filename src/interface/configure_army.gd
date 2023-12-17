@@ -23,8 +23,8 @@ func draw_army(unit_array) -> void:
 		
 		var UnitInterface = unit_interface.instantiate()
 		UnitInterface.setup(unit)
-		UnitInterface.position.x = count * 50
-		UnitInterface.position.y = 50
+		UnitInterface.position.x = count * 75
+		UnitInterface.position.y = 80
 		add_child(UnitInterface)
 		count += 1
 		pass

@@ -14,6 +14,10 @@ var heroesInRange : Array = []
 
 var isDead:bool = false
 
+func setup(unit_data):
+	self.add_to_group('enemy')
+	pass
+
 func _physics_process(delta):
 	
 	if attackTarget == null:
@@ -30,7 +34,7 @@ func _physics_process(delta):
 	velocity = dir * SPEED
 	move_and_slide()
 	
-	if attackTarget == null or attackTarget.getIsDead() == true or attackTarget.visible == false:	
+	if attackTarget == null or attackTarget.get_is_dead() == true or attackTarget.visible == false:	
 		self.heroesInRange.erase(attackTarget)
 		print("in range:", self.heroesInRange)
 		$AttackTimer.stop()
@@ -64,7 +68,7 @@ func find_new_attack_target():
 	var all_heroes = get_tree().get_nodes_in_group("hero")
 	print(all_heroes)
 	for hero in all_heroes:
-		if hero.getIsDead() == false:
+		if hero.get_is_dead() == false:
 			self.attackTarget = hero
 			$UpdatePathTimer.start()
 			if self.attackTarget in self.heroesInRange:

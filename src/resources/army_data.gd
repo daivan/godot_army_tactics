@@ -16,6 +16,7 @@ static func load_or_create() -> ArmyData:
 static func load_new_army() -> ArmyData:
 	var army_data = ArmyData.new()
 	var unit_data1 = UnitData.new()
+	unit_data1.item_slot_1 = 'Longsword'
 	army_data.unit_array.append(unit_data1)
 	var unit_data2 = UnitData.new()
 	army_data.unit_array.append(unit_data2)

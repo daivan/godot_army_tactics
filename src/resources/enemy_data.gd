@@ -1,4 +1,4 @@
-class_name UnitData extends Resource
+class_name EnemyData extends Resource
 
 var name: String = 'John'
 @export var max_health: float = 1.0
