@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://irvm1i7wp50l"]
+
+[ext_resource type="Script" path="res://src/interface/reward_after_battle.gd" id="1_cy1vw"]
+[ext_resource type="Texture2D" uid="uid://52mtln25cin" path="res://assets/items/longsword.png" id="2_v3pdl"]
+
+[node name="RewardAfterBattle" type="Node2D"]
+script = ExtResource("1_cy1vw")
+
+[node name="ButtonContinue" type="Button" parent="."]
+offset_left = 640.0
+offset_top = 379.0
+offset_right = 745.0
+offset_bottom = 411.0
+text = "Continue"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 13.0
+offset_right = 138.0
+offset_bottom = 55.0
+text = "Select reward"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 112.0
+offset_top = 156.0
+offset_right = 209.0
+offset_bottom = 187.0
+text = "select"
+
+[node name="Button" type="Button" parent="Button"]
+offset_left = 180.0
+offset_top = 6.0
+offset_right = 277.0
+offset_bottom = 37.0
+text = "select"
+
+[node name="Button" type="Button" parent="Button/Button"]
+offset_left = 180.0
+offset_top = 6.0
+offset_right = 277.0
+offset_bottom = 37.0
+text = "select"
+
+[node name="Longsword" type="Sprite2D" parent="Button/Button"]
+position = Vector2(230, -24)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_v3pdl")
+
+[node name="Longsword" type="Sprite2D" parent="Button"]
+position = Vector2(230, -24)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_v3pdl")
+
+[node name="Longsword" type="Sprite2D" parent="."]
+position = Vector2(162, 126)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_v3pdl")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 107.0
+offset_top = 313.0
+offset_right = 204.0
+offset_bottom = 344.0
+text = "select"
+
+[node name="Longsword2" type="Sprite2D" parent="."]
+position = Vector2(157, 283)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_v3pdl")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 300.0
+offset_top = 301.0
+offset_right = 397.0
+offset_bottom = 332.0
+text = "select"
+
+[node name="Longsword3" type="Sprite2D" parent="."]
+position = Vector2(350, 271)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_v3pdl")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 481.0
+offset_top = 296.0
+offset_right = 578.0
+offset_bottom = 327.0
+text = "select"
+
+[node name="Longsword4" type="Sprite2D" parent="."]
+position = Vector2(531, 266)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_v3pdl")

@@ -4,18 +4,11 @@ extends Node2D
 var world_map_data: WorldMapData
 
 @onready var button_start_mission = $ButtonStartMission
+@onready var selected_mission = $SelectedMission
 
-func _init():
-	# This code will run every time the node enters the scene tree
-	print("INIT Node entered tree")
-	
-func _enter_tree():
-	# This code will run every time the node enters the scene tree
-	print("Node entered tree")
-	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print('Run again!!!')
+	self.selected_mission.visible = false
 	self.button_start_mission.disabled = true
 	
 	self.world_map_data = GameManager.get_world_map()
@@ -27,6 +20,7 @@ func _ready():
 func _process(delta):
 	if GameManager.get_world_map_node() != null:
 		self.button_start_mission.disabled = false
+		self.selected_mission.visible = true
 		
 func draw_army(world_map_node_array) -> void:
 	var world_map_node = preload("res://src/interface/world_map_node.tscn")
@@ -47,5 +41,4 @@ func draw_army(world_map_node_array) -> void:
 func _on_button_configure_army_pressed():
 	get_tree().change_scene_to_file("res://src/interface/configure_army.tscn")
 
-func _on_button_start_mission_pressed():
-	get_tree().change_scene_to_file("res://src/dynamic_battlefield.tscn")
+

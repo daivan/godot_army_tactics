@@ -16,4 +16,9 @@ func _process(delta):
 
 func _on_button_pressed():
 	GameManager.win_battlefield()
-	get_tree().change_scene_to_file("res://src/interface/world_map.tscn")
+
+	if GameManager.has_beat_last_level():
+		get_tree().change_scene_to_file("res://src/interface/the_end.tscn")
+		return
+	else:
+		get_tree().change_scene_to_file("res://src/interface/world_map.tscn")

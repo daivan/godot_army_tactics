@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://5aqgxy8pi1i3"]
+[gd_scene load_steps=3 format=3 uid="uid://5aqgxy8pi1i3"]
 
 [ext_resource type="Script" path="res://src/interface/world_map.gd" id="1_3g010"]
+[ext_resource type="PackedScene" uid="uid://cofhwm3lpr704" path="res://src/interface/selected_mission.tscn" id="2_1wqfk"]
 
 [node name="WorldMap" type="Node2D"]
 script = ExtResource("1_3g010")
@@ -24,6 +25,9 @@ offset_top = 274.0
 offset_right = 140.0
 offset_bottom = 305.0
 text = "Configure Army"
+
+[node name="SelectedMission" parent="." instance=ExtResource("2_1wqfk")]
+position = Vector2(415, -1)
 
 [connection signal="pressed" from="ButtonStartMission" to="." method="_on_button_start_mission_pressed"]
 [connection signal="pressed" from="ButtonConfigureArmy" to="." method="_on_button_configure_army_pressed"]

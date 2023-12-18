@@ -17,6 +17,9 @@ func getPlayer() -> Array:
 	return [10, 20, 30]
 
 
+func clear_world_map_node() -> void:
+	self.selected_world_map_node = null
+	
 func set_world_map_node(world_map_node) -> void:
 	self.selected_world_map_node = world_map_node
 	
@@ -65,7 +68,11 @@ func get_world_map() -> WorldMapData:
 func get_beaten_level_names_array() -> Array:
 	return self.beaten_level_names_array
 	
-
+func has_beat_last_level() -> bool:
+	if self.current_level == 8:
+		return true
+	return false
+	
 func is_game_in_progress() -> bool:
 	if SaveLoadManager.does_save_file_exist() == true:
 		return true

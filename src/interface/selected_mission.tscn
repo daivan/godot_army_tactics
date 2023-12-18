@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cofhwm3lpr704"]
+
+[ext_resource type="Script" path="res://src/interface/selected_mission.gd" id="1_t8mgf"]
+[ext_resource type="Texture2D" uid="uid://7dc7okhjvbro" path="res://assets/enemies/tile_0109.png" id="2_c7hl4"]
+[ext_resource type="Texture2D" uid="uid://c3b8cgrb2ukbv" path="res://assets/enemies/tile_0121.png" id="3_qh356"]
+
+[node name="SelectedMission" type="Node2D"]
+script = ExtResource("1_t8mgf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 350.0
+offset_bottom = 341.0
+color = Color(0, 1, 1, 0.701961)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 13.0
+offset_right = 148.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Selected Mission"
+
+[node name="Label" type="Label" parent="Label"]
+offset_left = -1.0
+offset_top = 60.0
+offset_right = 128.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Enemies:
+
+
+Rewards:
+130 g
+40 exp
+3 items"
+
+[node name="Tile0109" type="Sprite2D" parent="."]
+position = Vector2(46, 124)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("2_c7hl4")
+
+[node name="Tile0121" type="Sprite2D" parent="."]
+position = Vector2(97, 124)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("3_qh356")
+
+[node name="Tile0122" type="Sprite2D" parent="."]
+position = Vector2(149, 124)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("3_qh356")
+
+[node name="ButtonStartMission" type="Button" parent="."]
+offset_left = 220.0
+offset_top = 281.0
+offset_right = 310.0
+offset_bottom = 319.0
+text = "Start Mission"
+
+[node name="ButtonCancel" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 286.0
+offset_right = 105.0
+offset_bottom = 324.0
+text = "Cancel"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0ushp8j4ic3r"]
+[gd_scene load_steps=3 format=3 uid="uid://c0ushp8j4ic3r"]
 
 [ext_resource type="Script" path="res://src/interface/configure_army.gd" id="1_b1f3o"]
+[ext_resource type="PackedScene" uid="uid://c2srx444c6rt3" path="res://src/interface/inventory.tscn" id="2_wbhpj"]
 
 [node name="ConfigureArmy" type="Node2D"]
 script = ExtResource("1_b1f3o")
@@ -33,5 +34,8 @@ offset_left = 272.0
 offset_top = 15.0
 offset_right = 312.0
 offset_bottom = 38.0
+
+[node name="Inventory" parent="." instance=ExtResource("2_wbhpj")]
+position = Vector2(624, 28)
 
 [connection signal="pressed" from="ButtonWorldMap" to="." method="_on_button_world_map_pressed"]

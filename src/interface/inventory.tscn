@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2srx444c6rt3"]
+
+[ext_resource type="Texture2D" uid="uid://52mtln25cin" path="res://assets/items/longsword.png" id="1_jfxw0"]
+[ext_resource type="Texture2D" uid="uid://o1icatn67ptb" path="res://assets/items/empty_item_slot_1.png" id="2_fdsfm"]
+
+[node name="Inventory" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Inventory"
+
+[node name="Longsword" type="Sprite2D" parent="."]
+position = Vector2(38, 77)
+texture = ExtResource("1_jfxw0")
+
+[node name="EmptyItemSlot5" type="Sprite2D" parent="."]
+position = Vector2(91, 77)
+texture = ExtResource("2_fdsfm")
+
+[node name="EmptyItemSlot1" type="Sprite2D" parent="."]
+position = Vector2(63, 78)
+texture = ExtResource("2_fdsfm")
+
+[node name="EmptyItemSlot2" type="Sprite2D" parent="."]
+position = Vector2(36, 108)
+texture = ExtResource("2_fdsfm")
+
+[node name="EmptyItemSlot3" type="Sprite2D" parent="."]
+position = Vector2(60, 106)
+texture = ExtResource("2_fdsfm")
+
+[node name="EmptyItemSlot4" type="Sprite2D" parent="."]
+position = Vector2(87, 104)
+texture = ExtResource("2_fdsfm")
