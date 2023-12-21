@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://0hhq0xjhywb7"]
+
+[ext_resource type="Script" path="res://src/test/test_peasant_battle.gd" id="1_10s18"]
+[ext_resource type="PackedScene" uid="uid://d07vtcft4xqnm" path="res://src/tile_map.tscn" id="2_xfckk"]
+[ext_resource type="PackedScene" uid="uid://8wa1fl7qdc1a" path="res://src/units/peasant.tscn" id="4_1ad1y"]
+[ext_resource type="PackedScene" uid="uid://b0dfatjrrakas" path="res://src/units/enemy_axeman.tscn" id="4_t3sd7"]
+
+[node name="TestPeasantBattle" type="Node2D"]
+script = ExtResource("1_10s18")
+
+[node name="TileMap" parent="." instance=ExtResource("2_xfckk")]
+
+[node name="EnemyAxeman" parent="." instance=ExtResource("4_t3sd7")]
+position = Vector2(574, 239)
+
+[node name="Peasant" parent="." instance=ExtResource("4_1ad1y")]
+position = Vector2(97, 249)

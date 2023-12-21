@@ -12,7 +12,7 @@ func _physics_process(delta):
 		var direction = get_parent().to_local(NavigationAgent.get_next_path_position()).normalized()
 		get_parent().velocity = direction * SPEED
 		get_parent().move_and_slide()
-
+	
 
 func update_move_path() -> void:
 	if self.moveTarget.get_target() != null:

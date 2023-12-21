@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://ml8f5af44vyg"]
+
+[ext_resource type="Script" path="res://src/test/test_axeman_battle.gd" id="1_mb2bs"]
+[ext_resource type="PackedScene" uid="uid://d07vtcft4xqnm" path="res://src/tile_map.tscn" id="2_vob2c"]
+[ext_resource type="PackedScene" uid="uid://dt827e7mg7n7g" path="res://src/units/worker.tscn" id="3_8y3ah"]
+[ext_resource type="PackedScene" uid="uid://b0dfatjrrakas" path="res://src/units/enemy_axeman.tscn" id="4_y7gpy"]
+
+[node name="TestAxemanBattle" type="Node2D"]
+script = ExtResource("1_mb2bs")
+
+[node name="TileMap" parent="." instance=ExtResource("2_vob2c")]
+
+[node name="Worker" parent="." instance=ExtResource("3_8y3ah")]
+position = Vector2(98, 253)
+
+[node name="EnemyAxeman" parent="." instance=ExtResource("4_y7gpy")]
+position = Vector2(574, 239)

@@ -1,14 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://bwrdbtmro0baw"]
+[gd_scene load_steps=18 format=3 uid="uid://dt827e7mg7n7g"]
 
-[ext_resource type="PackedScene" uid="uid://bqymrweaohfw0" path="res://src/components/movement_component.tscn" id="1_jxx2n"]
-[ext_resource type="Script" path="res://src/axeman.gd" id="1_wa4d7"]
-[ext_resource type="PackedScene" uid="uid://bmog2avuugi54" path="res://src/components/health_component.tscn" id="2_c4u2r"]
-[ext_resource type="PackedScene" uid="uid://ce75dqmwnnxpp" path="res://src/components/hitbox_component.tscn" id="3_8w0vy"]
-[ext_resource type="PackedScene" uid="uid://boqwt1npb004v" path="res://src/components/attack_component.tscn" id="4_shw1v"]
-[ext_resource type="Texture2D" uid="uid://dxheyl33pc4bq" path="res://assets/characters/tile_0086.png" id="5_lgqfr"]
-[ext_resource type="PackedScene" uid="uid://ulkfbmmjakso" path="res://src/components/attack_range_component.tscn" id="6_ngy4t"]
-[ext_resource type="PackedScene" uid="uid://d0irtd748m7vf" path="res://src/components/target_component.tscn" id="7_y1iuh"]
-[ext_resource type="Texture2D" uid="uid://4u2tsww01s0n" path="res://assets/tilemaps/MiniLumberjack_scaled_2x.png" id="8_andvu"]
+[ext_resource type="Script" path="res://src/units/worker.gd" id="1_5dvu0"]
+[ext_resource type="PackedScene" uid="uid://bqymrweaohfw0" path="res://src/components/movement_component.tscn" id="2_1uuv7"]
+[ext_resource type="PackedScene" uid="uid://bmog2avuugi54" path="res://src/components/health_component.tscn" id="3_ca6b6"]
+[ext_resource type="PackedScene" uid="uid://ce75dqmwnnxpp" path="res://src/components/hitbox_component.tscn" id="4_45035"]
+[ext_resource type="PackedScene" uid="uid://boqwt1npb004v" path="res://src/components/attack_component.tscn" id="5_61ueq"]
+[ext_resource type="PackedScene" uid="uid://ulkfbmmjakso" path="res://src/components/attack_range_component.tscn" id="6_tbab5"]
+[ext_resource type="PackedScene" uid="uid://d0irtd748m7vf" path="res://src/components/target_component.tscn" id="7_5wybs"]
+[ext_resource type="Texture2D" uid="uid://bg7nxj4gc5idv" path="res://assets/tilemaps/MiniWorker_scaled_2x.png" id="8_r4rqe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7g23"]
 
@@ -22,7 +21,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/path = NodePath("SpriteTileMap:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,14 +37,14 @@ length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/path = NodePath("SpriteTileMap:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [14, 15, 16, 17, 18, 19]
+"values": [18, 19, 20, 21]
 }
 
 [sub_resource type="Animation" id="Animation_p3bw6"]
@@ -54,14 +53,14 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/path = NodePath("SpriteTileMap:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [49, 50, 51, 52]
+"values": [36, 37, 38, 39]
 }
 
 [sub_resource type="Animation" id="Animation_ghy4d"]
@@ -71,7 +70,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/path = NodePath("SpriteTileMap:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -88,14 +87,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/path = NodePath("SpriteTileMap:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [21, 22, 23, 24, 25, 26]
+"values": [6, 7, 8, 9, 10, 11, 14]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k5m8j"]
@@ -107,52 +106,51 @@ _data = {
 "run": SubResource("Animation_hhhbk")
 }
 
-[node name="Axeman" type="CharacterBody2D" node_paths=PackedStringArray("target_component")]
-script = ExtResource("1_wa4d7")
+[node name="Worker" type="CharacterBody2D" node_paths=PackedStringArray("target_component", "health_component")]
+script = ExtResource("1_5dvu0")
 target_component = NodePath("TargetComponent")
+health_component = NodePath("HealthComponent")
 
-[node name="MovementComponent" parent="." node_paths=PackedStringArray("moveTarget") instance=ExtResource("1_jxx2n")]
+[node name="MovementComponent" parent="." node_paths=PackedStringArray("moveTarget") instance=ExtResource("2_1uuv7")]
 debug_enabled = true
 moveTarget = NodePath("../TargetComponent")
 SPEED = 50
 
-[node name="HealthComponent" parent="." instance=ExtResource("2_c4u2r")]
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("3_ca6b6")]
+position = Vector2(-50, 18)
+animation_player = NodePath("../AnimationPlayer")
 
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_8w0vy")]
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_45035")]
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_p7g23")
 
-[node name="AttackComponent" parent="." node_paths=PackedStringArray("animation_player", "attackRangeComponent", "targetComponent") instance=ExtResource("4_shw1v")]
+[node name="AttackComponent" parent="." node_paths=PackedStringArray("animation_player", "attackRangeComponent", "targetComponent") instance=ExtResource("5_61ueq")]
 animation_player = NodePath("../AnimationPlayer")
 attackRangeComponent = NodePath("../AttackRangeComponent")
 targetComponent = NodePath("../TargetComponent")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("5_lgqfr")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jvsuu")
 
-[node name="AttackRangeComponent" parent="." node_paths=PackedStringArray("targetComponent") instance=ExtResource("6_ngy4t")]
+[node name="AttackRangeComponent" parent="." node_paths=PackedStringArray("targetComponent") instance=ExtResource("6_tbab5")]
 targetComponent = NodePath("../TargetComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRangeComponent"]
 shape = SubResource("CircleShape2D_l0odd")
 
-[node name="TargetComponent" parent="." instance=ExtResource("7_y1iuh")]
+[node name="TargetComponent" parent="." instance=ExtResource("7_5wybs")]
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="SpriteTileMap" type="Sprite2D" parent="."]
 position = Vector2(0, -17)
-texture = ExtResource("8_andvu")
-hframes = 7
-vframes = 8
+texture = ExtResource("8_r4rqe")
+hframes = 6
+vframes = 7
 frame = 21
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_k5m8j")
 }
-autoplay = "run"
+autoplay = "idle"

@@ -22,5 +22,5 @@ func _on_attack_timer_timeout():
 		if attackRangeComponent.isInAttackRange == true:
 			print('Axeman is attacking')
 			animation_player.play('attack')
-			self.targetComponent.get_target().current_health -= 10
+			self.targetComponent.get_target().take_damage(10)
 		
