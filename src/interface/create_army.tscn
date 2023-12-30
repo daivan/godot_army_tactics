@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyyp6i5v2mqup"]
+[gd_scene load_steps=5 format=3 uid="uid://cyyp6i5v2mqup"]
 
 [ext_resource type="Script" path="res://src/interface/create_army.gd" id="1_7uoiu"]
 [ext_resource type="Texture2D" uid="uid://4u2tsww01s0n" path="res://assets/tilemaps/MiniLumberjack_scaled_2x.png" id="2_50pq6"]
+[ext_resource type="Texture2D" uid="uid://bg7nxj4gc5idv" path="res://assets/tilemaps/MiniWorker_scaled_2x.png" id="3_tjsl2"]
+[ext_resource type="Texture2D" uid="uid://b18s5prfr3xrl" path="res://assets/tilemaps/MiniPeasant_scaled_2x.png" id="4_3ivlm"]
 
 [node name="CreateArmy" type="Node2D"]
 script = ExtResource("1_7uoiu")
@@ -20,6 +22,20 @@ offset_right = 726.0
 offset_bottom = 398.0
 text = "Start"
 
+[node name="LabelArmy3" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 224.0
+offset_right = 135.0
+offset_bottom = 247.0
+text = "Five peasants"
+
+[node name="LabelArmy2" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 166.0
+offset_right = 134.0
+offset_bottom = 189.0
+text = "Four Workers"
+
 [node name="LabelArmy1" type="Label" parent="."]
 offset_left = 29.0
 offset_top = 98.0
@@ -27,11 +43,25 @@ offset_right = 69.0
 offset_bottom = 121.0
 text = "Thee Axemen"
 
+[node name="ButtonSelectArmy3" type="Button" parent="."]
+offset_left = 383.0
+offset_top = 227.0
+offset_right = 478.0
+offset_bottom = 258.0
+text = "Select"
+
+[node name="ButtonSelectArmy2" type="Button" parent="."]
+offset_left = 387.0
+offset_top = 162.0
+offset_right = 482.0
+offset_bottom = 193.0
+text = "Select"
+
 [node name="ButtonSelectArmy1" type="Button" parent="."]
-offset_left = 295.0
-offset_top = 93.0
-offset_right = 390.0
-offset_bottom = 124.0
+offset_left = 388.0
+offset_top = 96.0
+offset_right = 483.0
+offset_bottom = 127.0
 text = "Select"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
@@ -51,3 +81,57 @@ position = Vector2(175, 90)
 texture = ExtResource("2_50pq6")
 hframes = 7
 vframes = 8
+
+[node name="MiniWorkerScaled2x4" type="Sprite2D" parent="."]
+position = Vector2(292, 162)
+texture = ExtResource("3_tjsl2")
+hframes = 6
+vframes = 7
+
+[node name="MiniWorkerScaled2x3" type="Sprite2D" parent="."]
+position = Vector2(251, 159)
+texture = ExtResource("3_tjsl2")
+hframes = 6
+vframes = 7
+
+[node name="MiniWorkerScaled2x2" type="Sprite2D" parent="."]
+position = Vector2(210, 156)
+texture = ExtResource("3_tjsl2")
+hframes = 6
+vframes = 7
+
+[node name="MiniWorkerScaled2x" type="Sprite2D" parent="."]
+position = Vector2(172, 158)
+texture = ExtResource("3_tjsl2")
+hframes = 6
+vframes = 7
+
+[node name="MiniPeasantScaled2x5" type="Sprite2D" parent="."]
+position = Vector2(335, 225)
+texture = ExtResource("4_3ivlm")
+hframes = 6
+vframes = 6
+
+[node name="MiniPeasantScaled2x4" type="Sprite2D" parent="."]
+position = Vector2(297, 231)
+texture = ExtResource("4_3ivlm")
+hframes = 6
+vframes = 6
+
+[node name="MiniPeasantScaled2x3" type="Sprite2D" parent="."]
+position = Vector2(258, 227)
+texture = ExtResource("4_3ivlm")
+hframes = 6
+vframes = 6
+
+[node name="MiniPeasantScaled2x2" type="Sprite2D" parent="."]
+position = Vector2(219, 223)
+texture = ExtResource("4_3ivlm")
+hframes = 6
+vframes = 6
+
+[node name="MiniPeasantScaled2x" type="Sprite2D" parent="."]
+position = Vector2(180, 219)
+texture = ExtResource("4_3ivlm")
+hframes = 6
+vframes = 6

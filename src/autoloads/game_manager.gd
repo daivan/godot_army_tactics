@@ -13,6 +13,8 @@ var gold: int = 0
 
 var beaten_level_names_array: Array = []
 
+var current_army: ArmyData
+
 func getPlayer() -> Array:
 	return [10, 20, 30]
 
@@ -33,14 +35,19 @@ func get_current_level() -> int:
 # --- Function start_new_game
 #
 # Restart the game and reset everything
+# Generate the army
 #
 # Returns:
 # - void
-func start_new_game() -> void:
+func start_new_game(selected_army: String) -> void:
 	self.world_map_data = WorldMapData.get_world_map_data()
 	self.current_level = 1
 	self.gold = 0
 	self.beaten_level_names_array = []
+	
+	self.current_army = ArmyData.new_game_army(selected_army)
+
+
 
 # --- Function win_battlefield
 #
@@ -54,6 +61,7 @@ func win_battlefield() -> void:
 	add_to_beaten_level_names(self.selected_world_map_node.level_name)
 	self.add_gold(10) # Should come from self.selected_world_map_node
 	SaveLoadManager.save_world_map_data(self.world_map_data)
+	self.clear_world_map_node()
 	
 func add_gold(earned_gold: int):
 	self.gold += earned_gold
@@ -77,3 +85,6 @@ func is_game_in_progress() -> bool:
 	if SaveLoadManager.does_save_file_exist() == true:
 		return true
 	return false
+
+func get_army() -> ArmyData:
+	return self.current_army

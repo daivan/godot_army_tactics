@@ -8,7 +8,7 @@ var army_data: ArmyData
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	army_data = ArmyData.load_or_create()
+	army_data = GameManager.get_army()
 	
 	if army_data.unit_array.size() > 0:
 		draw_army(army_data.unit_array)

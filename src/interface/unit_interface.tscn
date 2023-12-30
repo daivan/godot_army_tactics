@@ -7,7 +7,7 @@
 [node name="UnitInterface" type="Node2D"]
 script = ExtResource("1_0700p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="SpriteUnitType" type="Sprite2D" parent="."]
 texture = ExtResource("2_lstpr")
 
 [node name="LabelName" type="Label" parent="."]

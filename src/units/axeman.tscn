@@ -14,7 +14,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jvsuu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0odd"]
-radius = 58.0775
+radius = 31.0483
 
 [sub_resource type="Animation" id="Animation_pgy0h"]
 length = 0.001
@@ -106,14 +106,14 @@ _data = {
 "run": SubResource("Animation_hhhbk")
 }
 
-[node name="Axeman" type="CharacterBody2D" node_paths=PackedStringArray("target_component", "health_component")]
+[node name="Axeman" type="CharacterBody2D" node_paths=PackedStringArray("target_component", "health_component") groups=["hero"]]
 script = ExtResource("1_wa4d7")
 target_component = NodePath("TargetComponent")
 health_component = NodePath("HealthComponent")
 
-[node name="MovementComponent" parent="." node_paths=PackedStringArray("moveTarget") instance=ExtResource("1_jxx2n")]
-debug_enabled = true
+[node name="MovementComponent" parent="." node_paths=PackedStringArray("moveTarget", "attack_range_component") instance=ExtResource("1_jxx2n")]
 moveTarget = NodePath("../TargetComponent")
+attack_range_component = NodePath("../AttackRangeComponent")
 SPEED = 50
 
 [node name="HealthComponent" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("2_c4u2r")]
@@ -126,8 +126,9 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_p7g23")
 
-[node name="AttackComponent" parent="." node_paths=PackedStringArray("animation_player", "attackRangeComponent", "targetComponent") instance=ExtResource("4_shw1v")]
+[node name="AttackComponent" parent="." node_paths=PackedStringArray("animation_player", "health_component", "attackRangeComponent", "targetComponent") instance=ExtResource("4_shw1v")]
 animation_player = NodePath("../AnimationPlayer")
+health_component = NodePath("../HealthComponent")
 attackRangeComponent = NodePath("../AttackRangeComponent")
 targetComponent = NodePath("../TargetComponent")
 

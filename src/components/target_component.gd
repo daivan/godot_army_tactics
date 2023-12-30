@@ -11,8 +11,7 @@ func _ready():
 	
 func _process(delta):
 
-	if self.target == null:
-		print(self.target)
+	if self.target == null || self.target.is_dead() == true:
 		get_new_target()
 
 func get_target():
@@ -20,6 +19,7 @@ func get_target():
 
 func get_new_target():
 	var target_array = get_tree().get_nodes_in_group(self.target_group)
-	print(target_array)
+
 	for first_target in target_array:
-		self.target = first_target
+		if first_target.is_dead() == false:
+			self.target = first_target

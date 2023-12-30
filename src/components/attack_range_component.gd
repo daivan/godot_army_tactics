@@ -15,7 +15,8 @@ func _on_body_entered(body):
 	if body.is_in_group(targetComponent.target_group):
 		self.bodiesInRange.append(body)
 
-
+func is_in_range_of_target() -> bool:
+	return self.isInAttackRange
 
 func _on_body_exited(body):
 	if body.is_in_group(targetComponent.target_group):

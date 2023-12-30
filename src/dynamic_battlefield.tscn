@@ -9,8 +9,10 @@ script = ExtResource("1_bbq8a")
 
 [node name="WinBattleScene" parent="." instance=ExtResource("5_pajbo")]
 visible = false
+top_level = true
 position = Vector2(51, 6)
 
 [node name="LoseBattleScene" parent="." instance=ExtResource("6_mmfli")]
 visible = false
+top_level = true
 position = Vector2(127, 59)

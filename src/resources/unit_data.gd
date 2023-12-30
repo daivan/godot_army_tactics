@@ -1,6 +1,8 @@
 class_name UnitData extends Resource
 
 var name: String = 'John'
+var unit_type: String = ''
+
 @export var max_health: float = 1.0
 @export var current_health: float = 1.0
 

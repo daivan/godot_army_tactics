@@ -3,13 +3,11 @@ extends Node2D
 
 var world_map_data: WorldMapData
 
-@onready var button_start_mission = $ButtonStartMission
 @onready var selected_mission = $SelectedMission
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.selected_mission.visible = false
-	self.button_start_mission.disabled = true
 	
 	self.world_map_data = GameManager.get_world_map()
 	
@@ -19,7 +17,6 @@ func _ready():
 		
 func _process(delta):
 	if GameManager.get_world_map_node() != null:
-		self.button_start_mission.disabled = false
 		self.selected_mission.visible = true
 		
 func draw_army(world_map_node_array) -> void:

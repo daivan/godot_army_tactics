@@ -21,4 +21,4 @@ func _on_button_pressed():
 		get_tree().change_scene_to_file("res://src/interface/the_end.tscn")
 		return
 	else:
-		get_tree().change_scene_to_file("res://src/interface/world_map.tscn")
+		get_tree().change_scene_to_file("res://src/interface/reward_after_battle.tscn")

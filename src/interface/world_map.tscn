@@ -11,14 +11,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Select mission"
 
-[node name="ButtonStartMission" type="Button" parent="."]
-offset_left = 408.0
-offset_top = 271.0
-offset_right = 538.0
-offset_bottom = 302.0
-text = "Start mission
-"
-
 [node name="ButtonConfigureArmy" type="Button" parent="."]
 offset_left = 10.0
 offset_top = 274.0
@@ -27,7 +19,7 @@ offset_bottom = 305.0
 text = "Configure Army"
 
 [node name="SelectedMission" parent="." instance=ExtResource("2_1wqfk")]
+top_level = true
 position = Vector2(415, -1)
 
-[connection signal="pressed" from="ButtonStartMission" to="." method="_on_button_start_mission_pressed"]
 [connection signal="pressed" from="ButtonConfigureArmy" to="." method="_on_button_configure_army_pressed"]

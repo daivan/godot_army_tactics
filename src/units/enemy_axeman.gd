@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-var is_dead: bool = false
-var current_health: int = 100
+var current_health: int = 20
 
 @onready var sprite_tile_map = $SpriteTileMap
 
@@ -9,19 +8,16 @@ var current_health: int = 100
 @export var health_component: HealthComponent
 
 func _ready():
-	#target_component.target_group = 'enemy'
+	#self.health_component.max_health = 20
+	#self.health_component.current_health = self.current_health
 	pass
 
 func setup(unit_data):
 	#self.add_to_group('hero')
 	pass
 
-func get_is_dead():
-	return self.is_dead
-
-func check_if_dead():
-	if self.current_health < 1:
-		self.is_dead = true
+func is_dead():
+	return self.health_component.is_dead()
 	
 func _process(delta):
 	var velocity = get_velocity()
